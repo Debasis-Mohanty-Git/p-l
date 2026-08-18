@@ -4,7 +4,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "node node_modules/nodemon/bin/nodemon.js src/server.js"
+    "dev": "node node_modules/nodemon/bin/nodemon.js src/server.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
