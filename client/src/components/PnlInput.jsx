@@ -59,8 +59,8 @@ const PnlInput = ({ onAddSuccess }) => {
 
       {error && (
         <div className="mt-3">
-          <p className="text-red-500 text-sm">{error}</p>
-          {error.includes("already recorded") && (
+          <p className="text-red-500 text-sm">{typeof error === 'string' ? error : 'An error occurred'}</p>
+          {typeof error === 'string' && error.includes("already recorded") && (
             <a href="/history" className="text-primary-600 hover:text-primary-700 text-sm font-medium mt-1 inline-block underline">
               Edit Today's P&L
             </a>
