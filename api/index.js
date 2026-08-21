@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pnlRoutes = require('./src/routes/pnlRoutes');
+const authRoutes = require('./src/routes/authRoutes');
 
 const app = express();
 
@@ -9,6 +10,7 @@ app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.use('/api/pnl', pnlRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => res.send('Daily P&L API is running successfully.'));
 
