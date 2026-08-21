@@ -9,9 +9,9 @@ const SummaryCards = ({ summary, loading }) => {
   const isPositive = totalPnl >= 0;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <div className="flex flex-col gap-4 mb-8 md:grid md:grid-cols-3 md:gap-6 relative">
       {/* Card 1: Total P&L */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+      <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between sticky top-4 z-10 md:static md:z-auto">
         <div className="flex justify-between items-start mb-4">
           <p className="text-gray-500 font-medium">Total P&L</p>
           <div className={`p-2 rounded-xl ${isPositive ? 'bg-primary-50 text-primary-500' : 'bg-red-50 text-red-500'}`}>
@@ -27,7 +27,7 @@ const SummaryCards = ({ summary, loading }) => {
       </div>
 
       {/* Card 2: Total Days */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+      <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between sticky top-8 z-20 md:static md:z-auto">
         <div className="flex justify-between items-start mb-4">
           <p className="text-gray-500 font-medium">Total Days</p>
           <div className="p-2 rounded-xl bg-blue-50 text-blue-500">
@@ -43,7 +43,7 @@ const SummaryCards = ({ summary, loading }) => {
       </div>
 
       {/* Card 3: Average / Day */}
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+      <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between sticky top-12 z-30 md:static md:z-auto">
         <div className="flex justify-between items-start mb-4">
           <p className="text-gray-500 font-medium">Average / Day</p>
           <div className="p-2 rounded-xl bg-purple-50 text-purple-500">
